@@ -1,7 +1,7 @@
 ### Sails Modular App
 This plugin allows you to create modular application using sailsjs library.
 
-[![Licence](https://img.shields.io/github/license/learn2torials/sails-modular)
+![Licence](https://img.shields.io/github/license/learn2torials/sails-modular)
 ![Issues](https://img.shields.io/github/issues/learn2torials/sails-modular)
 ![Forks](https://img.shields.io/github/forks/learn2torials/sails-modular)
 ![Stars](https://img.shields.io/github/stars/learn2torials/sails-modular)
