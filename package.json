@@ -1,6 +1,6 @@
 {
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "name": "sails-modular",
   "keywords": [
@@ -10,13 +10,13 @@
   ],
   "author": "Sandip Patel <sandip254@gmail.com>",
   "description": "create modular apps using sailsjs 1.0",
-  "homepage": "https://github.com/leeroybrun/sails-util-mvcsloader",
+  "homepage": "https://github.com/learn2torials/sails-modular",
   "bugs": {
-    "url": "https://github.com/leeroybrun/sails-util-mvcsloader/issues"
+    "url": "https://github.com/learn2torials/sails-modular/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/leeroybrun/sails-util-mvcsloader"
+    "url": "https://github.com/learn2torials/sails-modular"
   },
   "dependencies": {
     "async": "^3.1.0",
