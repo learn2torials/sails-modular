@@ -1,4 +1,3 @@
-
 /**
  *
  * Author: Sandip Patel
@@ -6,34 +5,32 @@
  */
 const async = require('async');
 
-module.exports = (sails) => {
+module.exports = sails => {
   return {
-
-    injectConfigs: function (dir, cb) {
+    injectConfigs: function(dir, cb) {
       require(__dirname + '/src/configs')(sails, dir, cb);
     },
 
-    injectPolicies: function (dir, cb) {
+    injectPolicies: function(dir, cb) {
       require(__dirname + '/src/policies')(sails, dir, cb);
     },
 
-    injectModels: function (dir, cb) {
+    injectModels: function(dir, cb) {
       require(__dirname + '/src/models')(sails, dir, cb);
     },
 
-    injectServices: function (dir, cb) {
+    injectServices: function(dir, cb) {
       require(__dirname + '/src/services')(sails, dir, cb);
     },
 
-    injectControllers: function (dir, cb) {
+    injectControllers: function(dir, cb) {
       require(__dirname + '/src/controllers')(sails, dir, cb);
     },
 
-    inject: function (dir, next) {
-
+    inject: function(dir, next) {
       let toLoad = [];
       const self = this;
-      const callback = next || function(){};
+      const callback = next || function() {};
 
       const directories = {
         models: dir + '/models',
@@ -43,8 +40,8 @@ module.exports = (sails) => {
         controllers: dir + '/controllers',
       };
 
-      const loadConfigs = (next) => {
-        self.injectConfigs(directories.configs, (err) => {
+      const loadConfigs = next => {
+        self.injectConfigs(directories.configs, err => {
           if (err) {
             return next(err);
           }
@@ -52,8 +49,8 @@ module.exports = (sails) => {
         });
       };
 
-      const loadPolicies = (next) => {
-        self.injectPolicies(directories.policies, (err) => {
+      const loadPolicies = next => {
+        self.injectPolicies(directories.policies, err => {
           if (err) {
             return next(err);
           }
@@ -61,8 +58,8 @@ module.exports = (sails) => {
         });
       };
 
-      const loadModels = (next) => {
-        self.injectModels(directories.models, (err) => {
+      const loadModels = next => {
+        self.injectModels(directories.models, err => {
           if (err) {
             return next(err);
           }
@@ -70,8 +67,8 @@ module.exports = (sails) => {
         });
       };
 
-      const loadServices = (next) => {
-        self.injectServices(directories.services, (err) => {
+      const loadServices = next => {
+        self.injectServices(directories.services, err => {
           if (err) {
             return next(err);
           }
@@ -79,8 +76,8 @@ module.exports = (sails) => {
         });
       };
 
-      const loadControllers = (next) => {
-        self.injectControllers(directories.controllers, (err) => {
+      const loadControllers = next => {
+        self.injectControllers(directories.controllers, err => {
           if (err) {
             return next(err);
           }
@@ -97,14 +94,14 @@ module.exports = (sails) => {
       toLoad.push(loadServices);
       toLoad.push(loadControllers);
 
-      async.waterfall(toLoad, (err) => {
+      async.waterfall(toLoad, err => {
         if (err) {
           sails.log.error(err);
           return callback(err);
         }
-        sails.log('custom module loaded');
+        sails.log('module: ', dir, 'loaded');
         return callback();
       });
-    }
+    },
   };
 };

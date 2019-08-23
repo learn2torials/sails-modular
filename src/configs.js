@@ -1,10 +1,9 @@
-
 /**
  *
  * Author: Sandip Patel
  * Description: load config files for given module
  */
-module.exports =  (sails, dir, cb) => {
+module.exports = (sails, dir, cb) => {
   require('include-all').aggregate(
     {
       dirname: dir,
@@ -16,7 +15,7 @@ module.exports =  (sails, dir, cb) => {
       if (err) {
         return cb(err);
       }
-      sails.config = _.merge(sails.config, configs, (a, b) => {
+      sails.config = _.merge(configs, sails.config, (a, b) => {
         if (_.isArray(a)) {
           return a.concat(b);
         }

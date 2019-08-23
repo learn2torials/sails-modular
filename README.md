@@ -7,8 +7,6 @@ This plugin allows you to create modular application using sailsjs library.
 ![Forks](https://img.shields.io/github/forks/learn2torials/sails-modular)
 ![Stars](https://img.shields.io/github/stars/learn2torials/sails-modular)
 
-Currently, it does not support policies. We are working on it!!
-
 ### Requirements
 
 - sailsjs >= 1.0
