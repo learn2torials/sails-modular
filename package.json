@@ -1,11 +1,12 @@
 {
   "license": "MIT",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.js",
   "name": "sails-modular",
   "keywords": [
     "sails modular app",
     "sails hook modular",
+    "sails modularize app",
     "sails plugins modular"
   ],
   "author": "Sandip Patel <sandip254@gmail.com>",
