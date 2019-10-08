@@ -1,7 +1,7 @@
 {
   "license": "MIT",
-  "version": "1.0.3",
-  "main": "index.js",
+  "version": "1.0.4",
+  "main": "hook.js",
   "name": "sails-modular",
   "keywords": [
     "sails modular app",
@@ -21,7 +21,12 @@
   },
   "dependencies": {
     "async": "^3.1.0",
+    "include-all": "^4.0.3",
     "lodash": "^4.17.15",
-    "include-all": "^4.0.3"
+    "sails": "^1.2.3"
+  },
+  "sails": {
+    "isHook": true,
+    "hookName": "sails-modular"
   }
 }
