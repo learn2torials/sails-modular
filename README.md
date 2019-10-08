@@ -19,45 +19,29 @@ npm install sails-modular --save
 
 ### How to use this plugin
 
-Create a new hook in your existing sails 1.0 application.
-Add following lines of code in your newly created hook.
-
-```bash
-const path =  require('path');
-module.exports = function (sails) {
-  var loader = require('sails-modular')(sails);
-  return {
-    initialize: function (next) {
-
-      // LOAD TEST MODULE
-      loader.inject(path.resolve('modules/test'), (err) => {
-        return next(err);
-      });
-    }
-  };
-};
-```
-
-### Create Following directory structure for new module
+Create a directory called modules in your app directory. All folders within
+modules directory will be loaded as a module in your application.
 
 Following is a sample directory structure for you new module.
+
 You can add things as per your needs. Have a look at these sample files in
 modules directory in this repo to get the idea.
 
 ```bash
-modules
-    |-- test
-        |-- configs
-            |-- routes.js
-            |-- policies.js
-        |-- controllers
-            |-- TestController.js
-        |-- models
-            |-- TestModel.js
-        |-- policies
-            |-- isTest.js
-        |-- services
-            |-- TestService.js
+app
+  |-- modules
+        |-- test
+            |-- configs
+                |-- routes.js
+                |-- policies.js
+            |-- controllers
+                |-- TestController.js
+            |-- models
+                |-- TestModel.js
+            |-- policies
+                |-- isTest.js
+            |-- services
+                |-- TestService.js
 ```
 
 ### How to test this module
